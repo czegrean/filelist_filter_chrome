@@ -1,0 +1,11 @@
+.whiteText { 
+    color: white !important;
+}
+
+.visitedlinks a.whiteText:visited {
+    color: white !important;
+}
+
+.hideNoFreeleech, .hideLimitedTorrents {
+    display: none;
+}

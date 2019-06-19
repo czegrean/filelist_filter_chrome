@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                font-family: Verdana, Tahoma, Arial, "Trebuchet MS", Sans-Serif, Georgia, Courier, "Times New Roman", Serif;
+                font-size: 8pt;
+                background-color: #b3b4ab;
+                margin: 0;
+            }
+
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            button {
+                margin: 10px;
+                outline: 0;
+            }
+
+            .settings-container {
+                background-color: #22313F;
+                color: #8b9aaa;
+                padding: 20px;
+                width: 900px;
+                border-radius: 5px;
+            }
+
+            .settings-container input {
+                font-family: tahoma;
+                font-size: 8pt;
+                color: #E0E0E0;
+                background: #34495E;
+                padding: 7px;
+                border: 1px solid #22313F;
+                border-top: 1px solid #2e465d;
+                border-bottom: 1px solid #2e465d;
+                border-radius: 3px;
+                text-align: right;
+                width: 50px;
+            }
+
+            .settings-body > div {
+                padding: 0px 5px;
+                height: 47px;
+                display: table-cell;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom: 1px solid #2c3e50;
+                font-weight: bold;
+            }
+
+            .red {
+                background-color: #f53240;
+            }
+
+            .purple {
+                background-color: #49274e;
+            }
+
+            .blue {
+                background-color: #0b3c5d;
+            }
+
+            .green {
+                background-color: #015249;
+            }
+
+            .settings-action {
+                padding: 20px 10px 0 10px;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .sample-text {
+                color: white;
+                padding: 10px 20px;
+                margin-right: 20px;
+            }
+
+            .save-button {
+                cursor: pointer;
+                margin: 0 2px;
+                padding: 4px 8px;
+                background: #2C3E50;
+                border: 1px solid #22313F;
+                text-decoration: none;
+                font-weight: normal;
+                font-size: 8pt;
+                color: #b6b6b6;
+                border-radius: 3px;
+            }
+
+            .save-button:hover {
+                background: #22313F;
+                border: 1px solid #2C3E50;
+                color: #b6b6b6;
+                font-weight: normal;
+                text-decoration: none;
+            }
+
+            .confirmation-message {
+                margin-top: 50px;
+                background-color: #22313F;
+                color: #ccc;
+                padding: 10px;
+                border-radius: 5px;
+                visibility: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="settings-container">
+            <div class="settings-body">
+                <div>
+                    <label for="limitTorrentsValue">Display only torrents over this value</label>
+                    <input id="limitTorrentsValue" name="limitTorrentsValue" type="number"/>
+                </div>
+                <div>
+                    <label for="highlightRedValue">Highlight torrents with red if they have over this number of downloads</label>
+                    <div style="display: flex">
+                        <div class="sample-text red">Sample Torrent</div>
+                        <input id="highlightRedValue" name="highlightRedValue" type="number"/>
+                    </div>
+                </div>
+                <div>
+                    <label for="highlightPurpleValue">Highlight torrents with purple if they have over this number of downloads</label>
+                    <div style="display: flex">
+                        <div class="sample-text purple">Sample Torrent</div>
+                        <input id="highlightPurpleValue" name="highlightPurpleValue" type="number"/>
+                    </div>
+                </div>
+                <div>
+                    <label for="highlightBlueValue">Highlight torrents with blue if they have over this number of downloads</label>
+                    <div style="display: flex">
+                        <div class="sample-text blue">Sample Torrent</div>
+                        <input id="highlightBlueValue" name="highlightBlueValue" type="number"/>
+                    </div>
+                </div>
+                <div>
+                    <label for="highlightGreenValue">Highlight torrents with green if they have over this number of downloads</label>
+                    <div style="display: flex">
+                        <div class="sample-text green">Sample Torrent</div>
+                        <input id="highlightGreenValue" name="highlightGreenValue" type="number"/>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-action">
+                <button id="saveSettings" class="save-button">Save Settings</button>
+            </div>
+        </div>
+        <div id="confirmSave" class="confirmation-message">Settings were saved</div>
+    </body>
+    <script src="options.js"></script>
+</html>
